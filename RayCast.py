@@ -26,7 +26,7 @@ PlayerSpeed = .25 #In terms of map units
 TurnSpeed = 1/360 #In terms of fraction of a full circle [1/360 = 1 deg.]
 WindowLength = 500 #In pixels [Also equal to number of rays cast]
 WindowHeight = 500 #In pixels [Multiplicative value for the calculated heights]
-FOV = 1/2500 #Distance between rays, do not set higher than 1/WindowLength, Idealy, set it to 1/[WindowLength*5] for a 60 degree view
+FOV = 1/2500 #Distance between rays, Idealy, set it to 1/[WindowLength*5] for a 60 degree view, also in fractions of a full circle
 
 #################################
 #### Start main Raycast code ####

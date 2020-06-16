@@ -23,9 +23,10 @@ FloorColor = "#FF0000"
 #The above two are in Hexadecimal [ie #7F289A] or a supported color name
 #Supported color list : http://www.tcl.tk/man/tcl8.5/TkCmd/colors.htm
 PlayerSpeed = .25 #In terms of map units
-TurnSpeed = 1 #In terms of degrees
-WindowLength = 500 #In pixels
-WindowHeight = 500 #In pixels
+TurnSpeed = 1/360 #In terms of fraction of a full circle [1/360 = 1 deg.]
+WindowLength = 500 #In pixels [Also equal to number of rays cast]
+WindowHeight = 500 #In pixels [Multiplicative value for the calculated heights]
+FOV = 1/2500 #Distance between rays, do not set higher than 1/WindowLength, Idealy, set it to 1/[WindowLength*5] for a 60 degree view
 
 #################################
 #### Start main Raycast code ####

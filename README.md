@@ -1,5 +1,4 @@
 # PyCast - A Pseudo 3D Ray-casting "Engine"
----
 This is a demo program which :    
 • Demonstrates a basic understanding of 2D Geometry and Triginometric functions    
 • Demonstrates usage of detecting inputs and real time screen rendering    

@@ -1,8 +1,3 @@
-import tkinter
-from tkinter import *
-import keyboard
-from math import *
-
 ########################
 #### Start settings ####
 ########################
@@ -26,18 +21,11 @@ FloorColor = "#FF0000"
 #The above two are in Hexadecimal [ie #7F289A] or a supported color name
 #Supported color list : http://www.tcl.tk/man/tcl8.5/TkCmd/colors.htm
 PlayerSpeed = .25 #In terms of map units
-TurnSpeed = 1/360 #In terms of fractions of a full circle [1/360 = 1 deg.]
+TurnSpeed = 1 #In terms of degrees
 WindowLength = 500 #In pixels [Also equal to number of rays cast]
 WindowHeight = 500 #In pixels [Multiplicative value for the heights]
-FOV = 1/2000 #Distance between rays in fractions of a circle, 1/[WindowLength*4] = 90 deg. 
+FOV = 75 #In terms of degrees
 
 ###############################
 #### Start window creation ####
 ###############################
-
-Win = tkinter.Tk()
-Win.geometry(str(WindowLength)+"x"+str(WindowHeight))
-Win.title("Python raycasting demo - © 2020 Brendan Scott")
-Canv = Canvas(Win, width = WindowLength, height = WindowHeight)
-Canv.pack()
-Win.mainloop()

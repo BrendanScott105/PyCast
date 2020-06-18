@@ -1,3 +1,6 @@
+import pygame
+from math import *
+
 ########################
 #### Start settings ####
 ########################
@@ -29,3 +32,7 @@ FOV = 75 #In terms of degrees
 ###############################
 #### Start window creation ####
 ###############################
+
+pygame.init()
+pygame.display.set_caption("Python raycasting demo © Brendan Scott")
+Canvas = pygame.display.set_mode((WindowLength, WindowHeight))

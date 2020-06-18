@@ -1,4 +1,6 @@
 import tkinter
+from tkinter import *
+import keyboard
 from math import *
 
 ########################
@@ -36,4 +38,6 @@ FOV = 1/2000 #Distance between rays in fractions of a circle, 1/[WindowLength*4]
 Win = tkinter.Tk()
 Win.geometry(str(WindowLength)+"x"+str(WindowHeight))
 Win.title("Python raycasting demo - © 2020 Brendan Scott")
+Canv = Canvas(Win, width = WindowLength, height = WindowHeight)
+Canv.pack()
 Win.mainloop()

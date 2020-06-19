@@ -1,4 +1,6 @@
 import pygame
+import keyboard
+import time
 from math import *
 
 ########################
@@ -29,10 +31,29 @@ WindowLength = 500 #In pixels [Also equal to number of rays cast]
 WindowHeight = 500 #In pixels [Multiplicative value for the heights]
 FOV = 75 #In terms of degrees
 
-###############################
-#### Start window creation ####
-###############################
+#############################################################
+#### Start window creation, rotation and positional code ####
+#############################################################
 
+Rotation = 0
+X,Y = 0,0
 pygame.init()
 pygame.display.set_caption("Python raycasting demo © Brendan Scott")
 Canvas = pygame.display.set_mode((WindowLength, WindowHeight))
+while (keyboard.is_pressed("escape") == False):
+	try:
+		if keyboard.is_pressed("up"):
+			print("To be added")
+		if keyboard.is_pressed("down"):
+			print("To be added")
+		if keyboard.is_pressed("left"):
+			if Rotation <= 0 :
+				Rotation = 360 - TurnSpeed
+			else : Rotation = Rotation - TurnSpeed
+			print(Rotation)
+		if keyboard.is_pressed("right"):
+			Rotation = (Rotation + TurnSpeed) % 360
+			print(Rotation)
+		time.sleep(.01)
+	except:
+		break

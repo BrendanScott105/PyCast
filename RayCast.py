@@ -8,20 +8,23 @@ from math import * #For Canvas, Keypresses, Speed, and various math functions
 ########################
 
 Map = [
-[1,1,1,1,1,1,1,1,1,1,1,1,1],             #██████████████████████████
-[1,0,0,0,1,0,1,0,0,0,0,0,1],             #██      ██  ██          ██
-[1,0,1,0,1,0,1,0,0,0,0,0,1],             #██  ██  ██  ██          ██
-[1,1,1,0,1,0,0,0,0,S,0,0,1],             #██████  ██        []    ██
-[1,0,1,0,1,0,1,0,0,0,0,0,1],             #██  ██  ██  ██          ██
-[1,0,0,0,0,0,1,0,0,0,0,0,1],             #██          ██          ██
-[1,0,1,1,1,1,1,1,1,0,1,1,1],             #██  ██████████████  ██████
-[1,0,1,0,1,0,1,0,0,0,0,0,1],             #██  ██  ██  ██          ██
-[1,0,0,0,0,0,0,0,1,1,1,0,1],             #██              ██████  ██
-[1,0,1,0,1,0,1,0,1,0,0,0,1],             #██  ██  ██  ██  ██      ██
-[1,0,0,0,0,0,0,0,1,1,1,0,1],             #██              ██████  ██
-[1,0,1,0,1,0,1,0,0,0,0,1,1],             #██  ██  ██  ██          ██
+#0 1 2 3 4 5 6 7...InitialX
+[1,1,1,1,1,1,1,1,1,1,1,1,1],#0           #██████████████████████████
+[1,0,0,0,1,0,1,0,0,0,0,0,1],#1           #██      ██  ██          ██
+[1,0,1,0,1,0,1,0,0,0,0,0,1],#2           #██  ██  ██  ██          ██
+[1,1,1,0,1,0,0,0,0,S,0,0,1],#3           #██████  ██        []    ██
+[1,0,1,0,1,0,1,0,0,0,0,0,1],#4           #██  ██  ██  ██          ██
+[1,0,0,0,0,0,1,0,0,0,0,0,1],#5           #██          ██          ██
+[1,0,1,1,1,1,1,1,1,0,1,1,1],#6           #██  ██████████████  ██████
+[1,0,1,0,1,0,1,0,0,0,0,0,1],#7           #██  ██  ██  ██          ██
+[1,0,0,0,0,0,0,0,1,1,1,0,1],#.           #██              ██████  ██
+[1,0,1,0,1,0,1,0,1,0,0,0,1],#.           #██  ██  ██  ██  ██      ██
+[1,0,0,0,0,0,0,0,1,1,1,0,1],#.           #██              ██████  ██
+[1,0,1,0,1,0,1,0,0,0,0,1,1],#InitialY    #██  ██  ██  ██          ██
 [1,1,1,1,1,1,1,1,1,1,1,1,1]]             #██████████████████████████
 #When changing the map, always enclose it, otherwise the program is likely to close/hang
+InitialX = 9 #THIS VALUE IS ABSOLUTELY REQUIRED [Location of S]
+InitialY = 3 #THIS VALUE IS ABSOLUTELY REQUIRED [Location of S]
 CeilingColor = "#0000FF"
 FloorColor = "#FF0000"
 #The above two are in Hexadecimal [ie #7F289A] or a supported color name
@@ -45,7 +48,7 @@ while (keyboard.is_pressed("escape") == False): #Halt program on pressing "Esc"
 	try:
 		if keyboard.is_pressed("up"): #Realistically this should give proper values
 			DeltaY = sin(Rotation)*PlayerSpeed
-			print(DeltaY)
+			print(DeltaY) #TODO : >>> Add overhead block variables for collision detection <<<
 			DeltaX = sqrt(abs(pow(PlayerSpeed,2)-pow(DeltaY,2)))
 			print(DeltaX)
 		if keyboard.is_pressed("left"): #Decrements rotation and loops back to 360

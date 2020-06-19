@@ -6,6 +6,7 @@ from math import * #For Canvas, Keypresses, Speed, and various math functions
 ########################
 #### Start settings ####
 ########################
+
 Map = [
 [1,1,1,1,1,1,1,1,1,1,1,1,1],             #██████████████████████████
 [1,0,0,0,1,0,1,0,0,0,0,0,1],             #██      ██  ██          ██

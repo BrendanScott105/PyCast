@@ -4,6 +4,12 @@ Map :
 ![Map](https://i.imgur.com/wzdNiEX.png)    
 Where [ ] is the initial location
 
-Project includes settings in the file as to provide for user customization, maybe UI elements for easier customization will be added in the future, but for now the main goal is completing things one step at a time until it works and functions as intended
+Basic render method learned from here : https://www.youtube.com/watch?v=gYRrGTC7GtA
 
-Basic render method taken from here : https://www.youtube.com/watch?v=gYRrGTC7GtA - No actual code taken or copied from the video
+# What it does
+
+1. Creates a 2D grid of the world layout
+2. Defines player location and rotation and sets it accordingly
+3. Uses location and rotation to cast out rays until a surface is hit
+4. Draws lines of unspecified height based on the distance to each surface
+5. When moving, nullifies movement values if entering a filled map unit

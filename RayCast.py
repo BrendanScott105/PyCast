@@ -12,7 +12,7 @@ Map = [
 [1,1,1,1,1,1,1,1,1,1,1,1,1],#0           #██████████████████████████
 [1,0,0,0,1,0,1,0,0,0,0,0,1],#1           #██      ██  ██          ██
 [1,0,1,0,1,0,1,0,0,0,0,0,1],#2           #██  ██  ██  ██          ██
-[1,1,1,0,1,0,0,0,0,S,0,0,1],#3           #██████  ██        []    ██
+[1,1,1,0,1,0,0,0,0,0,0,0,1],#3           #██████  ██        []    ██
 [1,0,1,0,1,0,1,0,0,0,0,0,1],#4           #██  ██  ██  ██          ██
 [1,0,0,0,0,0,1,0,0,0,0,0,1],#5           #██          ██          ██
 [1,0,1,1,1,1,1,1,1,0,1,1,1],#6           #██  ██████████████  ██████
@@ -23,8 +23,8 @@ Map = [
 [1,0,1,0,1,0,1,0,0,0,0,1,1],#InitialY    #██  ██  ██  ██          ██
 [1,1,1,1,1,1,1,1,1,1,1,1,1]]             #██████████████████████████
 #When changing the map, always enclose it, otherwise the program is likely to close/hang
-InitialX = 9 #THIS VALUE IS ABSOLUTELY REQUIRED [Location of S]
-InitialY = 3 #THIS VALUE IS ABSOLUTELY REQUIRED [Location of S]
+MainX = 9 #THIS VALUE IS ABSOLUTELY REQUIRED [Initial location]
+MainY = 3 #THIS VALUE IS ABSOLUTELY REQUIRED [Initial location]
 CeilingColor = "#0000FF"
 FloorColor = "#FF0000"
 #The above two are in Hexadecimal [ie #7F289A] or a supported color name
@@ -48,9 +48,14 @@ while (keyboard.is_pressed("escape") == False): #Halt program on pressing "Esc"
 	try:
 		if keyboard.is_pressed("up"): #Realistically this should give proper values
 			DeltaY = sin(Rotation)*PlayerSpeed
-			print(DeltaY) #TODO : >>> Add overhead block variables for collision detection <<<
+			Y += DeltaY
+			print("Add Y pos : ", DeltaY)
+			print("Main Y pos : ", Y)
 			DeltaX = sqrt(abs(pow(PlayerSpeed,2)-pow(DeltaY,2)))
-			print(DeltaX)
+			if Rotation <= 180 : X += DeltaX
+			else : X -= DeltaX #Properly set X position
+			print("Add X pos : ", DeltaX)
+			print("Main X pos : ", X)
 		if keyboard.is_pressed("left"): #Decrements rotation and loops back to 360
 			if Rotation <= 0 :
 				Rotation = 360 - TurnSpeed
@@ -59,6 +64,6 @@ while (keyboard.is_pressed("escape") == False): #Halt program on pressing "Esc"
 		if keyboard.is_pressed("right"): #Increments rotation up to 360
 			Rotation = (Rotation + TurnSpeed) % 360
 			print(Rotation)
-		time.sleep(.01)
+		time.sleep(.02)
 	except:
 		break

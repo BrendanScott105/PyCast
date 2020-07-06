@@ -1,5 +1,7 @@
 # PyCast - A Pseudo 3D Ray-casting "Engine"
 
+WARNING : THIS IS NOT COMPLETE [yet]
+
 Map :    
 ![Map](https://i.imgur.com/wzdNiEX.png)    
 Where [ ] is the initial location
